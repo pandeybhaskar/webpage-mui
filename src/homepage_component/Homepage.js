@@ -1,12 +1,14 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import {Button, CssBaseline} from '@mui/material'
 import { createTheme, ThemeProvider } from '@mui/material/styles'
 import { green, purple, yellow, red } from '@mui/material/colors';
+import Per from './Per';
+import PerMui from '../PerMui';
 
 const light_theme = createTheme({
     palette: {
         background: {
-            default: "#FEAFFF"
+            default: "#CFF5E7"
         },
         primary: {
             main: yellow[500],
@@ -20,7 +22,7 @@ const light_theme = createTheme({
 const dark_theme = createTheme({
     palette: {
         background: {
-            default: "#000000"
+            default: "#FEBE8C"
         },
         primary: {
             main: purple[500]
@@ -30,9 +32,26 @@ const dark_theme = createTheme({
         }
     }
 });
+
+const list_object = [
+    {
+        product : "Product 1",
+        price : 500,
+        available : 1
+    },
+    {
+        product : "Product 2",
+        price : 580,
+        available : 1
+    },
+    {
+        product : "Product 3",
+        price : 349,
+        available : 0
+    }
+]
 const Homepage = () => {
     const [mode, setmode] = useState(true);
-
   return (
     <ThemeProvider theme={ mode ? light_theme : dark_theme}>
         <CssBaseline/>
@@ -42,6 +61,9 @@ const Homepage = () => {
                 onClick={() => setmode(!mode) }
             >Toggle Theme
             </Button>
+            <div className='lists'>
+                <PerMui mode={mode} object={list_object}/>
+            </div>
     </ThemeProvider>
   )
 }

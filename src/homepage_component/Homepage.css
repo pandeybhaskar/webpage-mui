@@ -1,0 +1,18 @@
+/* .perLists{
+    display: flex;
+    flex-direction: row;
+    color: black;
+    background-color: aqua;
+    width: 100vw;
+    height: fit-content;
+    margin-bottom: 1%;
+}
+.perLists > div{
+    width: 100vw;
+}
+.perLists:hover{
+    background-color: bisque;
+} */
+.tablerow:hover{
+    background-color:burlywood;
+}
